@@ -719,7 +719,7 @@ a:hover {
    but the section itself might already be centered by other rules.
    If the form isn't centered within the #Contact section, add this: */
    #Contact {
-    display: flex; /* Ensures flex properties apply */
+    display: hidden; /* Ensures flex properties apply */
     justify-content: center; /* Centers contact-container horizontally */
     align-items: center; /* Centers contact-container vertically */
     /* min-height: 80vh; /* Optional: Ensure section takes up space */
@@ -750,6 +750,7 @@ a:hover {
     margin-bottom: 20px;
     text-align: center; /* Center heading */
     color: #002147; /* Match theme */
+    font-size: 24px;
     /* Removed align-self */
 }
 
@@ -836,5 +837,309 @@ a:hover {
    The .active class in styles_copy.css should still work fine. */
 
 
+/* ======================================== */
+/*          Mobile Responsive Styles        */
+/* ======================================== */
 
+/* Apply styles for screens 768px wide or less */
+@media (max-width: 768px) {
+
+    /* General Adjustments */
+    body {
+        font-size: 14px; /* Slightly smaller base font */
+    }
+
+    h1 {
+        font-size: 2em; /* Adjust heading sizes */
+    }
+
+    h2 {
+        font-size: 1.6em;
+    }
+
+    h3 {
+        font-size: 1.3em;
+    }
+
+    p {
+        line-height: 1.6; /* Improve readability */
+    }
+
+    /* Navbar */
+    .navbar {
+        flex-direction: column; /* Stack items vertically */
+        padding: 15px 10px; /* Adjust padding */
+        height: auto; /* Allow height to adjust */
+    }
+
+    .navbar .logo {
+        margin-bottom: 15px; /* Space below logo */
+        align-self: center; /* Center logo */
+    }
+    .navbar .logo img {
+        max-width: 150px; /* Control logo size */
+    }
+
+
+    .navbar .nav-link {
+        order: 3; /* Put links below buttons */
+        margin-top: 15px;
+        display: flex;
+        flex-direction: column; /* Stack links */
+        align-items: center; /* Center links */
+        width: 100%;
+    }
+
+    .navbar .nav-link a {
+        margin: 8px 0; /* Space between stacked links */
+        font-size: 1.1em;
+    }
+
+    .navbar .buttons {
+        order: 2; /* Put buttons below logo */
+        margin-top: 10px;
+        width: 100%;
+        display: flex;
+        justify-content: center; /* Center buttons */
+        gap: 10px; /* Space between buttons */
+    }
+     .navbar .buttons button {
+        padding: 8px 16px;
+        width: 100px; /* Give buttons a bit more width */
+    }
+
+    /* --- Home Section --- */
+
+    /* Landing Page Container */
+    #home .container {
+        flex-direction: column; /* Stack left/right */
+        padding: 20px;
+        height: auto; /* Adjust height */
+        margin-top: 20px; /* Add space below navbar */
+    }
+
+    #home .container .left,
+    #home .container .right {
+        width: 100%; /* Take full width */
+        flex-basis: auto; /* Reset flex-basis */
+        text-align: center; /* Center text */
+        padding: 15px 0;
+    }
+
+     #home .container .left h1 {
+        font-size: 2.2em; /* Adjust heading */
+    }
+     #home .container .left p {
+        font-size: 1em; /* Adjust paragraph */
+        margin: 15px 0;
+    }
+
+    #home .container .left .button-container {
+         justify-content: center; /* Center buttons */
+    }
+
+    /* Animated Images (Right Side) - Simplify or Hide */
+    #home .container .right {
+        margin-top: 30px;
+        height: 300px; /* Reduce height significantly */
+        overflow: hidden; /* Prevent overflow if needed */
+        /* Optionally hide it completely on very small screens */
+        /* display: none; */
+    }
+    #home .container .right .column {
+        /* Adjust if necessary, maybe reduce image count */
+        width: 48%; /* Keep columns side-by-side but smaller */
+    }
+    #home .container .right .image-box {
+        height: 80px; /* Smaller image boxes */
+        margin-bottom: 8px;
+    }
+    /* Consider reducing animation complexity/speed if laggy */
+
+
+    /* Features Section */
+    .features {
+        padding: 30px 15px;
+    }
+    .features .feature-container {
+        flex-direction: column; /* Stack boxes */
+        align-items: center; /* Center boxes */
+        gap: 25px; /* Space between boxes */
+    }
+    .features .feature-box {
+        width: 90%; /* Adjust width */
+        max-width: 350px; /* Max width for consistency */
+        padding: 20px;
+    }
+    .features .feature-image img {
+        max-height: 150px; /* Control image height */
+        object-fit: cover; /* Ensure image covers area */
+    }
+
+    /* Info Page */
+    .Info {
+        flex-direction: column; /* Stack content and image */
+        padding: 30px 15px;
+    }
+    .Info .content,
+    .Info .image-holder {
+        width: 100%; /* Full width */
+        text-align: center;
+    }
+     .Info .image-holder {
+        order: -1; /* Put image above text */
+        margin-bottom: 20px;
+        max-height: 250px; /* Limit image height */
+    }
+     .Info .image-holder img {
+         max-width: 100%;
+         height: auto; /* Let height adjust */
+         max-height: 250px; /* Apply max height here too */
+         object-fit: contain;
+    }
+    .Info .segments {
+        flex-direction: column; /* Stack segments */
+        gap: 15px;
+        align-items: center; /* Center segments */
+    }
+    .Info .segment1 {
+         width: 80%; /* Adjust segment width */
+    }
+
+
+    /* Blog Page */
+    .Blog {
+        padding: 30px 15px;
+    }
+    .Blog .blog-section {
+        flex-direction: column; /* Stack cards */
+        align-items: center; /* Center cards */
+        gap: 25px;
+    }
+    .Blog .blog-card {
+        width: 90%; /* Adjust card width */
+        max-width: 400px;
+    }
+    .Blog .image-placeholder img {
+         max-height: 180px;
+         object-fit: cover;
+    }
+
+
+    /* Review Slider */
+    .slider-container {
+        padding: 30px 10px;
+    }
+    .slider-container h1 {
+        margin-bottom: 20px;
+    }
+    
+    .slide {
+        flex-direction: column; /* Stack image and text */
+        align-items: center; /* Center items */
+        padding: 15px;
+        text-align: center;
+    }
+    .slide img {
+        width: 80px; /* Smaller image */
+        height: 80px;
+        border-radius: 50%;
+        margin-bottom: 15px;
+    }
+    .testimonial p {
+        font-size: 0.95em; /* Adjust text size */
+    }
+    .nav-buttons button {
+        font-size: 1.5em; /* Ensure buttons are tappable */
+        padding: 5px 10px;
+    }
+
+    /* Outro Section */
+    .Outro {
+        padding: 30px 15px;
+    }
+     .Outro .btns {
+        flex-direction: column; /* Stack buttons */
+        align-items: center;
+        gap: 15px; /* Space between buttons */
+        margin-top: 20px;
+    }
+     .Outro .btns button {
+         width: 70%; /* Make buttons wider */
+         max-width: 250px;
+         padding: 12px 20px; /* More padding */
+    }
+
+    /* --- About Section --- */
+    #about {
+        padding: 30px 20px; /* Adjust padding */
+    }
+    #about h1 {
+        font-size: 1.8em; /* Adjust heading */
+    }
+     #about h2 {
+        font-size: 1.5em;
+    }
+    #about ul {
+        padding-left: 20px; /* Indent list */
+    }
+    #about li {
+        margin-bottom: 10px; /* Space list items */
+    }
+
+    /* --- Contact Section --- */
+    #Contact .contact-container {
+        padding: 30px 15px;
+    }
+    #Contact form {
+        width: 100%; /* Form takes full width of container */
+        padding: 20px;
+    }
+    #Contact form input[type="text"],
+    #Contact form input[type="email"],
+    #Contact form textarea {
+        font-size: 1em; /* Ensure text is readable */
+    }
+    #Contact form button[type="submit"] {
+        padding: 12px 20px;
+        font-size: 1em;
+    }
+
+    /* --- Footer --- */
+    footer {
+        padding: 20px 15px;
+        flex-direction: column; /* Stack footer items */
+        text-align: center;
+    }
+
+    footer .logo_outro {
+         margin-bottom: 20px; /* Space below logo */
+    }
+     footer .logo_outro img {
+        max-width: 120px; /* Control footer logo size */
+    }
+
+    footer .links {
+        flex-direction: column; /* Stack links */
+        align-items: center;
+        margin-bottom: 20px;
+    }
+     footer .links a {
+        margin: 8px 0; /* Space between links */
+    }
+
+    footer .footer-bottom {
+        flex-direction: column; /* Stack copyright and policies */
+        align-items: center;
+    }
+     footer .policies {
+        margin-top: 15px; /* Space above policies */
+        flex-direction: column; /* Stack policy links */
+        align-items: center;
+    }
+     footer .policies a {
+         margin: 5px 0; /* Space between policy links */
+    }
+
+} /* End of @media (max-width: 768px) */
 
