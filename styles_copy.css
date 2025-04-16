@@ -981,8 +981,12 @@ a:hover {
         flex-direction: column; /* Stack content and image */
         padding: 30px 15px;
     }
-    .Info .content,
     .Info .image-holder {
+        width: 100%; /* Full width */
+        text-align: center;
+        background: transparent;
+    }
+    .Info .content {
         width: 100%; /* Full width */
         text-align: center;
     }
@@ -1032,6 +1036,7 @@ a:hover {
     }
     .slider-container h1 {
         margin-bottom: 20px;
+        place-self: center;
     }
     
     .slide {
@@ -1089,11 +1094,11 @@ a:hover {
 
     /* --- Contact Section --- */
     #Contact .contact-container {
-        padding: 30px 15px;
+        padding: 30px 30px;
     }
     #Contact form {
         width: 100%; /* Form takes full width of container */
-        padding: 20px;
+        padding: 2px;
     }
     #Contact form input[type="text"],
     #Contact form input[type="email"],
