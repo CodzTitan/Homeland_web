@@ -9,6 +9,9 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 .section {
     display: none; /* Hide sections initially */
