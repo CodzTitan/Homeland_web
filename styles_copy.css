@@ -1,3 +1,7 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -9,9 +13,12 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    width: 100%;
-    max-width: 100%;
-    overflow-x: hidden;
+
+}
+html, body {
+        overflow-x: hidden;
+        width: 100%; /* Explicitly set width */
+        max-width: 100%; /* Prevent exceeding viewport */
 }
 .section {
     display: none; /* Hide sections initially */
@@ -927,6 +934,7 @@ a:hover {
         flex-basis: auto; /* Reset flex-basis */
         text-align: center; /* Center text */
         padding: 15px 0;
+        overflow: hidden;
     }
 
      #home .container .left h1 {
@@ -951,10 +959,10 @@ a:hover {
     }
     #home .container .right .column {
         /* Adjust if necessary, maybe reduce image count */
-        width: 48%; /* Keep columns side-by-side but smaller */
+        width: 47%; /* Keep columns side-by-side but smaller */
     }
     #home .container .right .image-box {
-        height: 80px; /* Smaller image boxes */
+        height: 100px; /* Smaller image boxes */
         margin-bottom: 8px;
     }
     /* Consider reducing animation complexity/speed if laggy */
