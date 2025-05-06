@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KnowHaven</title>
-    <link rel="stylesheet" href="styles_copy.css">
+    <link rel="stylesheet" href="styles_copy2.css">
 </head>
 <body>
     
@@ -18,6 +18,7 @@
             <a onclick="showSection('subjects')">Subjects</a>
             <a onclick="showSection('about')">About Us</a>
             <a onclick="showSection('Contact')">Contact</a>
+            <a onclick="showSection('Courses')">Courses</a>
         </div>
         <div class="buttons">
             <button class="join">Join</button>
@@ -34,7 +35,7 @@
                 
             </p>
             <div class="button-container">
-            <button class="login">Explore</button>
+            <button class="login" onclick="showSection('Courses')">Explore</button>
             <button class="join" onclick="window.location.href='https://userauth5.netlify.app/';">Sign Up</button>
             </div>
         </div>
@@ -146,7 +147,7 @@
                 <p>Monitor your learning journey and revisit topics as needed.</p>
             </div>
         </div>
-        <button class="explore-btn" >Explore</button>
+        <button class="explore-btn" onclick="showSection('Courses')">Explore</button>
     </section>
     <! Page 2 (Features Page) >
 
@@ -189,8 +190,15 @@
                 <span class="read-time">5 min read</span>
                 <h2>Mastering Time Management for Students</h2>
                 <p>Learn how to manage your study time effectively.</p>
-                <button class="read-more">Read more</button>
+                <!-- Added Expandable Section -->
+                <div class="more-content">
+                    <div class="inner-content">
+                        <p>This involves understanding your peak productivity times, breaking down large assignments into smaller steps, using tools like planners or apps, and importantly, scheduling regular breaks to avoid burnout. Effective time management reduces stress and improves academic performance significantly.</p> <!-- Long Content -->
+                    </div>
+                </div>
+                <button class="read-more">Read more</button> <!-- Keep existing class -->
             </div>
+            
             <div class="blog-card">
                 <div class="image-placeholder">
                   <img src="https://i.postimg.cc/1tCyKQGT/pic-13.jpg" width="100%" height="100%" alt="Resized Image">
@@ -199,8 +207,15 @@
                 <span class="read-time">5 min read</span>
                 <h2>The Power of Active Learning</h2>
                 <p>Discover techniques to enhance your learning experience.</p>
-                <button class="read-more">Read more</button>
+                <!-- Added Expandable Section -->
+                <div class="more-content">
+                    <div class="inner-content">
+                        <p>Active learning strategies include summarizing concepts in your own words, teaching the material to someone else, using flashcards for recall practice, and engaging in group discussions. These methods force your brain to process information more deeply, leading to better retention and understanding.</p> <!-- Long Content -->
+                    </div>
+                </div>
+                <button class="read-more">Read more</button> <!-- Keep existing class -->
             </div>
+
             <div class="blog-card">
                 <div class="image-placeholder">
                   <img src="https://i.postimg.cc/1tCyKQGT/pic-13.jpg" width="100%" height="100%" alt="Resized Image">
@@ -209,7 +224,13 @@
                 <span class="read-time">5 min read</span>
                 <h2>Creating a Study Schedule That Works</h2>
                 <p>Learn to build a personalized study plan.</p>
-                <button class="read-more">Read more</button>
+                <!-- Added Expandable Section -->
+                <div class="more-content">
+                    <div class="inner-content">
+                        <p>A good study schedule allocates specific time slots for each subject, includes revision time, and accounts for extracurricular activities and leisure. Be realistic about how much you can cover in one session. Regularly review and adjust your schedule based on your progress and upcoming deadlines. Consistency is crucial.</p> <!-- Long Content -->
+                    </div>
+                </div>
+                <button class="read-more">Read more</button> <!-- Keep existing class -->
             </div>
         </div>
         <button class="view-all">View all</button>
@@ -370,6 +391,51 @@
     </div> <!-- ending div id = "about" -->
 
     <div id="Contact" class="section" style=" place-items: center;" >
+        <!-- ****** START: Inserted FAQ Section HTML ****** -->
+        <section class="faq-section">
+            <h1>Frequently Asked Questions</h1>
+
+            <div class="faq-item">
+              <button class="faq-question">What is KnowHaven?<span class="arrow">▼</span></button>
+              <div class="faq-answer">
+                <p>KnowHaven is an online learning platform providing high-quality video lessons specifically tailored for Class 10 students to help them grasp complex concepts easily.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question">What subjects are covered?<span class="arrow">▼</span></button>
+              <div class="faq-answer">
+                <p>Currently, we focus primarily on Mathematics and Physics for Class 10, with plans to expand our subject offerings in the future.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question">How do I access the courses?<span class="arrow">▼</span></button>
+              <div class="faq-answer">
+                <p>You can access courses by signing up or logging into your account. Navigate to the 'Subjects' or 'Courses' section to find the video lessons.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">Is there a cost associated with KnowHaven?<span class="arrow">▼</span></button>
+                <div class="faq-answer">
+                    <p>Please check our 'Courses' or 'Join' sections for the latest information on membership plans and any associated costs or free trial offers.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">Can I track my progress?<span class="arrow">▼</span></button>
+                <div class="faq-answer">
+                    <p>Yes, our platform includes features to help you monitor your learning journey and revisit topics as needed. This typically requires being logged in.</p>
+                </div>
+            </div>
+        </section>
+        <!-- ****** END: Inserted FAQ Section HTML ****** -->
+        
+        
+        
+        <h2 style="text-align: center; margin-bottom: 20px; color: #002147;">Still Have Questions?</h2>
+        
         <div class="contact-container"> <!-- Added this container from index.html -->
             <form id="contact-form">
               <h2>Contact Us</h2>
@@ -386,6 +452,35 @@
             </form>
         </div>
     </div>
+
+    <div id="Courses" class="section" style="align-content: center;">
+        <h1>What do you learn?</h1>
+        <p>Welcome to KnowHaven – where knowledge finds its true home.</p>
+        <p>At KnowHaven, we believe that learning should be limitless, engaging, 
+            and accessible to all. Our platform is built for curious minds, 
+            passionate learners, and ambitious individuals who aspire to shape 
+            the future with knowledge. Whether you're exploring new subjects, 
+            refining your skills, or preparing for academic excellence, 
+            KnowHaven is your sanctuary for growth.   </p>
+        <h2>Our Mission</h2>
+        <p>To empower learners with high-quality educational resources, 
+            interactive learning experiences, and a supportive community 
+            that fosters creativity, critical thinking, and lifelong 
+            curiosity.</p>
+
+        <h2>Why Choose KnowHaven?</h2>
+        <ul>✔ Expert-Curated Content  – Courses, articles, and study materials designed by professionals.</ul>
+        <ul>✔ Interactive Learning    – Engaging videos, quizzes, and interactive activities for a dynamic learning experience.</ul>
+        <ul>✔ Personalized Experience – Learn at your own pace with tailored recommendations.</ul>
+        <ul>✔ Community               – Connect with like-minded individuals, share knowledge, and grow together.</ul>
+        <ul>✔ Accessible Anywhere     – Access from anywhere, anytime with an internet connection.</ul>
+
+        <p>At KnowHaven, education is more than just information—it’s a journey of discovery, innovation, and transformation.</p>
+        <h1> Join us, and let's build a smarter future together.
+
+        </h1>
+
+    </div> <!-- ending div id = "about" -->
     
 
 
@@ -757,12 +852,120 @@
  // End of Contact Us script
  // ==============================================================================
 
+    //==============================================================================
+    // --- NEW: Read More Functionality Script (Adapted) ---
+    // ==============================================================================
+    function initializeReadMore() {
+        // Select all "Read More" buttons within the blog section
+        const readMoreButtons = document.querySelectorAll('.Blog .blog-card .read-more');
 
- // Keep the existing footer script below this if necessary
-// }); // This might be closing a DOMContentLoaded listener, ensure structure is correct
+        readMoreButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Find the parent blog card
+                const card = this.closest('.blog-card');
+                if (!card) return; // Exit if structure is unexpected
 
+                // Find the .more-content div within this specific card
+                const moreContent = card.querySelector('.more-content');
+                if (!moreContent) return; // Exit if not found
 
+                // Toggle the .show class to expand/collapse
+                moreContent.classList.toggle('show');
 
+                // Change button text
+                if (moreContent.classList.contains('show')) {
+                    this.textContent = "Read Less";
+                } else {
+                    this.textContent = "Read More";
+                }
+
+                // Trigger pulse animation on the button
+                this.classList.add("pulse");
+                setTimeout(() => {
+                    this.classList.remove("pulse");
+                }, 400); // Match the animation duration in CSS
+            });
+        });
+    }
+  // ==============================================================================
+    // --- End of Read More Script ---
+    // ==============================================================================
+
+    // --- DOMContentLoaded Listener (CORRECTED & COMPLETE) ---
+    document.addEventListener('DOMContentLoaded', () => {
+        let sectionToShowOnLoad = 'home'; // Default section ID
+
+        // 1. Check the URL hash
+        const urlHash = window.location.hash;
+        if (urlHash) {
+            const potentialId = urlHash.substring(1);
+            if (document.getElementById(potentialId)) {
+                sectionToShowOnLoad = potentialId;
+                console.log(`URL hash detected. Initial section set to: ${sectionToShowOnLoad}`);
+            } else {
+                 console.warn(`URL hash '#${potentialId}' found, but no element with that ID exists. Defaulting to '${sectionToShowOnLoad}'.`);
+            }
+        } else {
+             console.log(`No URL hash found. Defaulting to '${sectionToShowOnLoad}'.`);
+        }
+
+        // 2. Show the determined section
+        // This function handles adding '.active' and calling initializeSubjectLayout if needed.
+        showSection(sectionToShowOnLoad);
+
+        // ****** 3. Initialize other dynamic components AFTER section is shown ******
+        initializeReadMore(); // <--- Make sure this call is present
+        initializeFAQ();      // <--- Make sure this call is present
+
+        // Note: The Testimonial slider script is separate and self-initializes.
+        // Contact form listener is attached outside this listener but needs elements to exist.
+    });
+    // --- End of DOMContentLoaded Listener ---
+
+// --- NEW: FAQ Functionality Script ---
+    // ==============================================================================
+    function initializeFAQ() {
+        // Select questions *only within the Contact section* to be safe
+        const faqQuestions = document.querySelectorAll('#Contact .faq-question');
+
+        faqQuestions.forEach(button => {
+            button.addEventListener('click', () => {
+                const answer = button.nextElementSibling; // The div right after the button
+                const arrow = button.querySelector('.arrow'); // The arrow span inside the button
+
+                // Check if the clicked item's answer is already open
+                const isCurrentlyOpen = answer.classList.contains('open');
+
+                // --- Close all other open answers FIRST ---
+                document.querySelectorAll('#Contact .faq-answer.open').forEach(openAnswer => {
+                    // If this open answer is NOT the one we just clicked
+                    if (openAnswer !== answer) {
+                        openAnswer.classList.remove('open');
+                        // Also reset the arrow of the corresponding question
+                        const correspondingQuestion = openAnswer.previousElementSibling;
+                        if (correspondingQuestion && correspondingQuestion.classList.contains('faq-question')) {
+                            correspondingQuestion.querySelector('.arrow').classList.remove('rotate');
+                        }
+                    }
+                });
+                // --- End closing others ---
+
+                // Now, toggle the clicked item
+                if (isCurrentlyOpen) {
+                    // If it was open, close it
+                    answer.classList.remove('open');
+                    arrow.classList.remove('rotate');
+                } else {
+                    // If it was closed, open it
+                    answer.classList.add('open');
+                    arrow.classList.add('rotate');
+                }
+            });
+        });
+    }
+    // ==============================================================================
+    // --- End of FAQ Script ---
+    // ==============================================================================
 
 
      
@@ -778,10 +981,10 @@
       <img src="https://i.postimg.cc/qv2tkNrG/logobook-3.png" alt="KnowHaven Logo">
     </div>
     <div class="links">
-        <a href="#">About Us</a>
-        <a href="#">Contact Us</a>
+        <a href="javascript:void(0);" onclick="showSection('about')">About Us</a>
+        <a href="javascript:void(0);" onclick="showSection('Contact')">Contact Us</a>
         <a href="#">Help Center</a>
-        <a href="#">FAQ Section</a>
+        <a href="javascript:void(0);" onclick="showSection('Contact')">FAQ Section</a>
         <a href="#">Blog Posts</a>
     </div>
     <div class="footer-bottom">
@@ -799,3 +1002,4 @@
 
 </body>
 </html>
+    
