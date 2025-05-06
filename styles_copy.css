@@ -2,7 +2,7 @@
     box-sizing: border-box;
   }
 
-body {
+  body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -13,13 +13,14 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-
-}
-html, body {
+    }
+    
+    html, body {
         overflow-x: hidden;
         width: 100%; /* Explicitly set width */
         max-width: 100%; /* Prevent exceeding viewport */
-}
+    }
+
 .section {
     display: none; /* Hide sections initially */
     padding: 20px;
@@ -1106,6 +1107,7 @@ a:hover {
     /* --- Contact Section --- */
     #Contact .contact-container {
         padding: 30px 30px;
+        
     }
     #Contact form {
         width: 100%; /* Form takes full width of container */
@@ -1159,3 +1161,141 @@ a:hover {
 
 } /* End of @media (max-width: 768px) */
 
+
+/* Styles for READMORE functionality */
+.more-content { /* Changed from #moreContent */
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.8s cubic-bezier(0.77, 0, 0.175, 1), /* Adjusted timing */
+                opacity 0.8s ease,
+                margin-top 0.8s ease; /* Added margin transition */
+    margin-top: 0; /* Start with no margin */
+}
+
+.more-content.show { /* Changed from #moreContent.show */
+    max-height: 400px; /* Adjust height as needed */
+    opacity: 1;
+    margin-top: 10px; /* Add some space when shown */
+}
+
+.inner-content { /* Changed from .innerContent */
+    /* Keep inner styling simple or adjust as needed */
+    opacity: 0;
+    transform: translateY(15px); /* Subtle slide up effect */
+    transition: opacity 0.6s ease 0.2s, transform 0.6s ease 0.2s; /* Delay after container expands */
+    padding: 5px 0; /* Optional padding inside */
+}
+
+/* Removed #shortContent style - assuming existing p tag style is sufficient */
+
+.more-content.show .inner-content { /* Changed selectors */
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes buttonPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.06); } /* Slightly less pulse */
+    100% { transform: scale(1); }
+}
+
+.pulse {
+    animation: buttonPulse 0.4s ease;
+}
+/* ----- End of Read More Styles ----- */
+
+
+/* ============================ */
+/* ===== FAQ Section Styles ===== */
+/* ============================ */
+
+/* Container for the FAQ section within the Contact page */
+#Contact .faq-section {
+    width: 100%;
+    max-width: 800px; /* Max width of the FAQ block */
+    margin: 0 auto 80px auto; /* Center it and add space below before the form */
+    padding: 0 15px; /* Add some padding on the sides */
+    box-sizing: border-box; /* Include padding in width calculation */
+  }
+  
+  #Contact .faq-section h1 {
+    text-align: center;
+    font-size: 2.2rem; /* Adjust size if needed */
+    margin-bottom: 30px;
+    color: #002147; /* Dark blue text */
+  }
+  
+  #Contact .faq-item {
+    border-bottom: 1px solid #00406b; /* Slightly darker border */
+    margin-bottom: 10px;
+    background-color: transparent; /* Light background for items - AliceBlue */
+    border-radius: 5px; /* Slightly rounded corners */
+    overflow: hidden; /* Ensures corners are respected */
+  }
+  
+  #Contact .faq-question {
+    width: 100%;
+    padding: 18px 20px; /* Adjust padding */
+    background: none;
+    border: none;
+    outline: none;
+    color: #002147; /* Dark blue text */
+    font-size: 1.1rem;
+    font-weight: 600; /* Slightly bolder questions */
+    text-align: left;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.2s ease; /* Add hover transition */
+  }
+  
+  #Contact .faq-question:hover {
+    background-color: transparent; /* Slightly different background on hover */
+    color: #c50163; /* Keep hover color */
+  }
+  
+  #Contact .arrow {
+    font-size: 1.2rem;
+    font-weight: bold; /* Make arrow bolder */
+    transition: transform 0.3s ease;
+  }
+  
+  #Contact .faq-answer {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 20px;
+    font-size: 0.95rem;
+    line-height: 1.6; /* Improve readability */
+    color: #333; /* Darker grey for answers */
+    background-color: transparent; /* Slightly different background for answer */
+    transition: opacity 0.4s ease, max-height 0.4s ease, padding 0.3s ease;
+    pointer-events: none; /* Prevent interaction when hidden */
+  }
+  
+  #Contact .faq-answer.open {
+    opacity: 1;
+    max-height: 300px; /* Adjust if answers are very long */
+    padding: 15px 20px 20px 20px; /* Add padding when open */
+    pointer-events: auto; /* Allow interaction when open */
+  }
+  
+  #Contact .faq-answer p {
+      margin: 0; /* Remove default paragraph margin if needed */
+  }
+  
+  
+  #Contact .rotate {
+    transform: rotate(180deg);
+  }
+  
+  /* Add some space below the Contact H2 if it feels too close to FAQ */
+  #Contact .contact-container h2 {
+      margin-top: 30px;
+  }
+  
+  
+  /* ===== End of FAQ Section Styles ===== */
