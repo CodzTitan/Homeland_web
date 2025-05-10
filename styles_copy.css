@@ -1158,6 +1158,94 @@ a:hover {
      footer .policies a {
          margin: 5px 0; /* Space between policy links */
     }
+    /* Container for all topics under a subject (e.g., Math topics) */
+    #subjects .subject-topics-container {
+        display: grid; /* Use grid for easy layout */
+        /*grid-template-columns: 1fr; /* Single column layout for topics */
+        /* If you want two columns on mobile (if they fit): */
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 15px; /* Space between topic cards */
+        width: 100%; /* Make the container take full available width */
+        padding: 15px; /* Add some padding around the topics */
+        box-sizing: border-box; /* Include padding in the width calculation */
+        margin-top: 20px; /* Add some space below the book image */
+        position: relative; /* Keep this as JS sets it */
+        /* Clear any absolute positioning from desktop if it was there via CSS */
+        top: auto;
+        left: auto;
+        height: auto;
+    }
+
+    /* Individual Topic Card */
+    #subjects .topic { /* Or more specifically: #subjects .subject-topics-container .topic */
+        width: 100%; /* Make each topic card take full width of its grid column */
+        min-height: 100px; /* Ensure a minimum height, adjust as needed */
+        padding: 15px;
+        border: 1px solid #ddd; /* Example border */
+        border-radius: 8px;   /* Example rounded corners */
+        background-color: transparent; /* Example background */
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Subtle shadow */
+        box-sizing: border-box;
+        /* Ensure text wraps within the card */
+        overflow-wrap: break-word; /* Standard property */
+        word-wrap: break-word;     /* Older property, good for wider browser support */
+        word-break: break-word;    /* Can also help with very long words */
+
+        /* Reset any absolute positioning from desktop if it was there via CSS */
+        position: relative;
+        left: auto;
+        top: auto;
+    }
+
+    #subjects .topic .topic-title {
+        font-size: 0.8em; /* Adjust as needed */
+        margin-bottom: 8px;
+        font-weight: bold;
+    }
+
+    #subjects .topic .topic-description {
+        font-size: 0.6em; /* Adjust as needed */
+        color: #555;
+        line-height: 1.4;
+    }
+
+    /* Ensure the main subject wrapper allows for content flow */
+    #subjects .subject-display-container {
+        display: flex; /* Or block, depending on your overall structure */
+        flex-direction: column; /* Stack image and topics container */
+        align-items: center; /* Center items if desired */
+        width: 100%;
+    }
+
+    #subjects .subject-book-image {
+        width: 80%; /* Or a max-width */
+        max-width: 300px; /* Example max width for the book image */
+        margin-bottom: 15px; /* Space between image and topics */
+    }
+    #subjects .subject-book-image img {
+        width: 100%;
+        height: auto;
+        display: block; /* Remove extra space below image */
+    }
+
+    
+
+    .Blog {
+        padding: 30px 15px;
+    }
+    .Blog .blog-section {
+        flex-direction: column; /* Stack cards */
+        align-items: center; /* Center cards */
+        gap: 25px;
+    }
+    .Blog .blog-card {
+        width: 90%; /* Adjust card width */
+        max-width: 400px;
+    }
+    .Blog .image-placeholder img {
+         max-height: 180px;
+         object-fit: cover;
+    }
 
 } /* End of @media (max-width: 768px) */
 
